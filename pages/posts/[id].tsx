@@ -28,9 +28,9 @@ export async function getStaticProps({ params }: {
 }
 
 export default function Post({ postData }: {
-  postData: Post
+  postData?: Post
 }) {
-  return (
+  return postData ? (
     <Layout>
       <Head>
         <title>{postData.title}</title>
@@ -43,5 +43,5 @@ export default function Post({ postData }: {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml ? postData.contentHtml : 'No cotent available.' }} />
       </article>
     </Layout>
-  )
+  ) : null
 }

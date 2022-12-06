@@ -8,7 +8,7 @@ export type Post = {
   id: string,
   title: string,
   date: string,
-  contentHtml?: string | undefined
+  contentHtml?: string
 }
 
 const postsDirectory = path.join(process.cwd(), 'posts')
