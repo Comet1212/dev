@@ -12,13 +12,11 @@ function generateSiteMap(posts: {id: string}[]) {
      <url>
        <loc>https://jsonplaceholder.typicode.com/guide</loc>
      </url>
-     ${posts.map(({ id }) => {
-    return `
+     ${posts.map(({ id }) => `
        <url>
            <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
        </url>
-     `
-  })
+     `)
     .join('')}
    </urlset>
  `
@@ -44,7 +42,8 @@ export async function getServerSideProps({ res }: {
   res.end()
 
   return {
-    props: {},
+    props: {
+    }
   }
 }
 

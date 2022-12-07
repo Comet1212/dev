@@ -1,6 +1,6 @@
-import styles from './alert.module.css'
-import cn from 'classnames'
 import type { ReactElement } from 'react'
+import cn from 'classnames'
+import styles from './alert.module.css'
 
 interface AlertProps {
   children: ReactElement[],
@@ -12,7 +12,7 @@ export default function Alert({ children, type }: AlertProps) {
     <div
       className={cn({
         [styles.success]: type === 'success',
-        [styles.error]: type === 'error',
+        [styles.error]: type === 'error'
       })}
     >
       {children}
